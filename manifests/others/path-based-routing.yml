@@ -1,35 +1,31 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: name-virtual-host-ingress-no-third-host
+  name: flask-ingress-rules
 spec:
   rules:
-  - host: first.bar.com
+  - host: 
     http:
       paths:
       - pathType: Prefix
-        path: "/"
+        path: /
         backend:
           service:
-            name: service1
+            name: flask-hello
             port:
               number: 80
-  - host: second.bar.com
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
+      - path: /vikram
+        pathType: Prefix
         backend:
           service:
-            name: service2
+            name: flask-greet
             port:
               number: 80
-  - http:
-      paths:
-      - pathType: Prefix
-        path: "/"
+      - path: /details
+        pathType: Prefix
         backend:
           service:
-            name: service3
+            name: flask-details
             port:
               number: 80
+
