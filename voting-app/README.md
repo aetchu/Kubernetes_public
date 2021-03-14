@@ -1,5 +1,5 @@
 # Example Voting App
-> This is a simple application based on micro-services architecture, consisting of 5 simple services
+> This is a simple application based on micro-services architecture, consisting of 5 simple services. More information on how to deploy applications in the kubernetes cluster with Ingress controller is here https://youtu.be/tyj5pHOQpac and complete kubernetes playlist is here https://youtu.be/yBr92MCcQRc
 
 ## Working
 - Voting-App: Frontend of the application written in Python, used by users to cast their votes.
