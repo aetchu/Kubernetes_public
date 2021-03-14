@@ -40,6 +40,6 @@ $ docker stack deploy -c docker-stack.yml vote
 
 ## Kubernetes deployment
 
-The vote and result are front-end so we need to access them from outside the cluster , so we need a NodPort service for each of them in order to access it from outside the cluster.
-for the redis and postgresDB we need an clusterIP service because it's still inside the cluster.
-if we look at the source code of the worker we can see that he connect to each database using their services and update the votes from the redis to postgres. so technically no one is accessing the worker so we don't need a service for him.
+- The vote and result are front-end so we need to access them from outside the cluster , so we need a NodePort service for each of them in order to access it from outside the cluster.
+- For deploying in the cloud, We can change this NodePort service to LoadBalancer that provisions a Cloud LoadBalancer
+- For the redis and postgresDB we need an clusterIP service because it's still inside the cluster.
